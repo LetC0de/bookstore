@@ -1,0 +1,203 @@
+.book-card {
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-card-cover {
+  position: relative;
+  aspect-ratio: 2/3;
+  border-radius: 4px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem 0.8rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.book-card-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.book-card-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.3));
+}
+
+.book-card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.book-card-author {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.book-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.book-card:hover .book-card-overlay {
+  opacity: 1;
+}
+
+.quick-view-btn {
+  padding: 0.6rem 1.5rem;
+  background: white;
+  color: var(--color-text);
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transform: translateY(10px);
+  transition: all var(--transition-smooth);
+}
+
+.book-card:hover .quick-view-btn {
+  transform: translateY(0);
+}
+
+.quick-view-btn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.book-card:hover .book-card-cover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-card-genre {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.book-card-name {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.book-card-writer {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.book-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.book-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.book-card-rating svg {
+  width: 14px;
+  height: 14px;
+}
+
+.book-card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  transition: all var(--transition-smooth);
+}
+
+.add-to-cart-btn:hover {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(193, 120, 23, 0.3);
+}
+
+@media (max-width: 768px) {
+  .book-card-name {
+    font-size: 1rem;
+  }
+
+  .book-card-price {
+    font-size: 1.1rem;
+  }
+}
