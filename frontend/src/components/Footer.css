@@ -248,3 +248,54 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.75rem;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
+
+/* Touch feedback */
+@media (hover: none) {
+  .social-link:active {
+    transform: scale(0.9);
+  }
+
+  .footer-links a:active {
+    color: white;
+  }
+
+  .footer-legal a:active {
+    color: white;
+  }
+}

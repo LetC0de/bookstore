@@ -166,6 +166,14 @@
 }
 
 @media (max-width: 768px) {
+  .about-section::before {
+    animation: none;
+  }
+
+  .about-image-card::before {
+    animation: none;
+  }
+
   .about-title {
     font-size: 2rem;
   }
@@ -176,5 +184,35 @@
 
   .about-image-card {
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .about-image-card {
+    max-width: 250px;
+  }
+
+  .feature-item {
+    padding: var(--spacing-sm);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.1rem;
+  }
+
+  .feature-text {
+    font-size: 0.9rem;
   }
 }

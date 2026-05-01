@@ -263,6 +263,16 @@
   transform: translateY(0);
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .book-card-cover {
+    transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+  }
+
+  .book-card:hover .book-card-cover {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(3deg) translateY(-12px);
+  }
+}
+
 @media (max-width: 768px) {
   .book-card-name {
     font-size: 0.95rem;
@@ -278,5 +288,66 @@
 
   .book-card:hover .book-card-cover {
     transform: perspective(1000px) rotateY(0) rotateX(0) translateY(-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card-cover {
+    padding: 1rem 0.7rem;
+  }
+
+  .book-card-title {
+    font-size: 0.85rem;
+  }
+
+  .book-card-author {
+    font-size: 0.75rem;
+  }
+
+  .book-card-name {
+    font-size: 0.9rem;
+  }
+
+  .book-card-price {
+    font-size: 1rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .book-card-genre {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .book-card-rating {
+    font-size: 0.85rem;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+  .book-card-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .book-card:active .book-card-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .add-to-cart-btn:active {
+    transform: scale(0.95);
+  }
+
+  .book-card:hover .book-card-cover {
+    transform: perspective(1000px) rotateY(0) rotateX(0);
+  }
+
+  .book-card:active .book-card-cover {
+    transform: perspective(1000px) rotateY(0) rotateX(0) translateY(-4px);
   }
 }

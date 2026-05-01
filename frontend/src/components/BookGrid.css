@@ -33,6 +33,13 @@
   gap: var(--spacing-lg);
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
@@ -40,6 +47,21 @@
 
   .book-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
   }
 }

@@ -112,13 +112,63 @@
   box-shadow: var(--shadow-lg);
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .deals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
 @media (max-width: 768px) {
+  .deals-section::before {
+    animation: none;
+  }
+
+  .deals-badge {
+    animation: none;
+  }
+
   .deals-title {
     font-size: 2rem;
   }
 
   .deals-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .discount-percent {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .deals-title {
+    font-size: 1.75rem;
+  }
+
+  .deals-subtitle {
+    font-size: 1rem;
+  }
+
+  .deals-badge {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .deals-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
+  }
+
+  .discount-percent {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .deals-footer .btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
   }
 }
