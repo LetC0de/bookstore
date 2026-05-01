@@ -1,15 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BookCard.css';
 
 const BookCard = ({ book }) => {
+  const navigate = useNavigate();
+
+  const handleQuickView = () => {
+    navigate(`/product/${book.id}`);
+  };
+
   return (
     <div className="book-card">
-      <div className="book-card-cover" style={{ backgroundColor: book.color }}>
+      <div className="book-card-cover" style={{ backgroundColor: book.color }} onClick={handleQuickView}>
         <div className="book-card-spine"></div>
         <div className="book-card-title">{book.title}</div>
         <div className="book-card-author">{book.author}</div>
         <div className="book-card-overlay">
-          <button className="quick-view-btn">Quick View</button>
+          <button className="quick-view-btn" onClick={handleQuickView}>Quick View</button>
         </div>
       </div>
       <div className="book-card-info">
