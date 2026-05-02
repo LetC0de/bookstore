@@ -14,7 +14,7 @@
   position: absolute;
   top: -30%;
   right: -10%;
-  width: 500px;
+  width: min(500px, 40vw);
   height: 500px;
   background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
   border-radius: 50%;
@@ -58,8 +58,8 @@
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -75,7 +75,7 @@
   }
 
   .book-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
     gap: var(--spacing-md);
   }
 }
@@ -90,7 +90,7 @@
   }
 
   .book-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
     gap: var(--spacing-sm);
   }
 }

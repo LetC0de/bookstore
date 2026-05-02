@@ -22,9 +22,9 @@
 
 /* Container */
 .container {
-  max-width: 1400px;
+  max-width: min(1400px, 100vw);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 clamp(1rem, 3vw, 2rem);
   width: 100%;
   overflow-x: hidden;
 }

@@ -28,8 +28,8 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 .category-card {
@@ -170,32 +170,11 @@
   }
 
   .categories-grid {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: var(--spacing-md);
-    max-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: var(--spacing-xs);
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .categories-grid::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .categories-grid::-webkit-scrollbar-track {
-    background: rgba(99, 102, 241, 0.1);
-    border-radius: var(--radius-full);
-  }
-
-  .categories-grid::-webkit-scrollbar-thumb {
-    background: var(--gradient-primary);
-    border-radius: var(--radius-full);
   }
 
   .category-card {
-    flex-shrink: 0;
     width: 100%;
   }
 
@@ -215,11 +194,12 @@
   }
 
   .categories-grid {
-    max-height: 500px;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
   }
 
   .category-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   .category-icon {
