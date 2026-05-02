@@ -1,5 +1,5 @@
 .hero {
-  padding: var(--spacing-xl) 0;
+  padding: 100px 0 var(--spacing-md) 0;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -360,7 +360,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: var(--spacing-lg) 0;
+    padding: 90px 0 var(--spacing-sm) 0;
   }
 
   .hero-title {
