@@ -1,6 +1,7 @@
 .app {
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 .app::before {
@@ -15,10 +16,6 @@
     radial-gradient(circle at 80% 80%, rgba(139, 90, 15, 0.03) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
-}
-
-.app > * {
-  position: relative;
 }
 
 /* Container */
