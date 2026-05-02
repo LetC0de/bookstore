@@ -365,3 +365,21 @@ html {
     padding: var(--spacing-md) 0;
   }
 }
+
+@media (max-width: 375px) {
+  :root {
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.6rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+}

@@ -2,6 +2,8 @@
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .app::before {
@@ -23,6 +25,8 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Section Spacing */
@@ -46,6 +50,12 @@
   }
 
   .container {
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--spacing-xs);
   }
 }

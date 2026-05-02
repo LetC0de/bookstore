@@ -31,6 +31,7 @@
   position: relative;
   width: 100%;
   min-height: 600px;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -43,6 +44,7 @@
   left: 0;
   right: 0;
   min-height: 600px;
+  max-width: 100%;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
@@ -389,6 +391,7 @@
 
   .hero-content {
     min-height: 500px;
+    padding: var(--spacing-sm);
   }
 
   .hero-title {
@@ -446,6 +449,7 @@
 
   .hero-content {
     min-height: 450px;
+    padding: var(--spacing-sm);
   }
 
   .hero-title {
@@ -469,8 +473,13 @@
   }
 
   .hero-book {
-    width: 130px;
-    min-width: 130px;
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .hero-books {
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-sm);
   }
 
   .hero-book-cover {
@@ -493,5 +502,28 @@
   .hero-dot {
     width: 8px;
     height: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-carousel {
+    min-height: 400px;
+  }
+
+  .hero-content {
+    min-height: 400px;
+  }
+
+  .hero-book {
+    width: 110px;
+    min-width: 110px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
   }
 }
