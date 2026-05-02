@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { books } from '../data/books';
 import './Hero.css';
 
 const Hero = () => {
   const featuredBooks = books.filter(book => book.featured);
+  const [imageErrors, setImageErrors] = useState({});
+
+  const handleImageError = (bookId) => {
+    setImageErrors(prev => ({ ...prev, [bookId]: true }));
+  };
 
   return (
     <section className="hero">
@@ -31,14 +36,25 @@ const Hero = () => {
                 key={book.id}
                 className="hero-book"
                 style={{
-                  animationDelay: `${index * 0.2}s`,
-                  '--book-color': book.color
+                  animationDelay: `${index * 0.2}s`
                 }}
               >
-                <div className="hero-book-cover" style={{ backgroundColor: book.color }}>
-                  <div className="book-spine"></div>
-                  <div className="book-title">{book.title}</div>
-                  <div className="book-author">{book.author}</div>
+                <div className="hero-book-cover">
+                  {!imageErrors[book.id] ? (
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      className="hero-book-image"
+                      onError={() => handleImageError(book.id)}
+                    />
+                  ) : (
+                    <div className="hero-book-placeholder">
+                      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                    </div>
+                  )}
                 </div>
                 <div className="hero-book-info">
                   <h3>{book.title}</h3>

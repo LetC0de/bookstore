@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BookCard.css';
 
 const BookCard = ({ book }) => {
   const navigate = useNavigate();
+  const [imageError, setImageError] = useState(false);
 
   const handleQuickView = () => {
     navigate(`/product/${book.id}`);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <div className="book-card">
-      <div className="book-card-cover" style={{ backgroundColor: book.color }} onClick={handleQuickView}>
-        <div className="book-card-spine"></div>
-        <div className="book-card-title">{book.title}</div>
-        <div className="book-card-author">{book.author}</div>
+      <div className="book-card-cover" onClick={handleQuickView}>
+        {!imageError ? (
+          <img
+            src={book.image}
+            alt={book.title}
+            className="book-cover-image"
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="book-cover-placeholder">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            <p className="placeholder-text">{book.title}</p>
+          </div>
+        )}
         <div className="book-card-overlay">
           <button className="quick-view-btn" onClick={handleQuickView}>Quick View</button>
         </div>

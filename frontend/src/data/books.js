@@ -9,7 +9,7 @@ export const books = [
     rating: 4.8,
     featured: true,
     description: "A dazzling novel about all the choices that go into a life well lived.",
-    color: "#2C3E50"
+    image: "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const books = [
     rating: 4.9,
     featured: true,
     description: "An easy and proven way to build good habits and break bad ones.",
-    color: "#E74C3C"
+    image: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const books = [
     rating: 4.7,
     featured: true,
     description: "A lone astronaut must save the earth from disaster in this incredible new science-based thriller.",
-    color: "#3498DB"
+    image: "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg"
   },
 
   // Fiction
@@ -42,7 +42,7 @@ export const books = [
     price: 26.99,
     genre: "Fiction",
     rating: 4.6,
-    color: "#16A085"
+    image: "https://covers.openlibrary.org/b/isbn/9780735219090-L.jpg"
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ export const books = [
     price: 25.99,
     genre: "Fiction",
     rating: 4.7,
-    color: "#8E44AD"
+    image: "https://covers.openlibrary.org/b/isbn/9781501139239-L.jpg"
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ export const books = [
     price: 27.50,
     genre: "Fiction",
     rating: 4.5,
-    color: "#D35400"
+    image: "https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg"
   },
 
   // Mystery & Thriller
@@ -71,7 +71,7 @@ export const books = [
     price: 26.50,
     genre: "Mystery",
     rating: 4.4,
-    color: "#34495E"
+    image: "https://covers.openlibrary.org/b/isbn/9781250301697-L.jpg"
   },
   {
     id: 8,
@@ -80,7 +80,7 @@ export const books = [
     price: 24.99,
     genre: "Mystery",
     rating: 4.3,
-    color: "#C0392B"
+    image: "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg"
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ export const books = [
     price: 25.99,
     genre: "Mystery",
     rating: 4.2,
-    color: "#7F8C8D"
+    image: "https://covers.openlibrary.org/b/isbn/9780062868930-L.jpg"
   },
 
   // Science Fiction & Fantasy
@@ -100,7 +100,7 @@ export const books = [
     price: 29.99,
     genre: "Science Fiction",
     rating: 4.8,
-    color: "#D68910"
+    image: "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg"
   },
   {
     id: 11,
@@ -109,7 +109,7 @@ export const books = [
     price: 28.50,
     genre: "Fantasy",
     rating: 4.7,
-    color: "#922B21"
+    image: "https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg"
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ export const books = [
     price: 24.99,
     genre: "Science Fiction",
     rating: 4.5,
-    color: "#1F618D"
+    image: "https://covers.openlibrary.org/b/isbn/9780441569595-L.jpg"
   },
 
   // Non-Fiction
@@ -129,7 +129,7 @@ export const books = [
     price: 32.99,
     genre: "Non-Fiction",
     rating: 4.6,
-    color: "#117A65"
+    image: "https://covers.openlibrary.org/b/isbn/9780062316110-L.jpg"
   },
   {
     id: 14,
@@ -138,7 +138,7 @@ export const books = [
     price: 28.99,
     genre: "Non-Fiction",
     rating: 4.7,
-    color: "#6C3483"
+    image: "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg"
   },
   {
     id: 15,
@@ -147,7 +147,7 @@ export const books = [
     price: 30.99,
     genre: "Non-Fiction",
     rating: 4.5,
-    color: "#1A5490"
+    image: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg"
   }
 ];
 
