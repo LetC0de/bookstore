@@ -34,7 +34,8 @@ const Header = () => {
             <div className="nav-links">
               <Link to="/" className="nav-link" onClick={closeMobileMenu}>Home</Link>
               <Link to="/shop" className="nav-link" onClick={closeMobileMenu}>Shop</Link>
-              <Link to="/login" className="nav-link" onClick={closeMobileMenu}>Login</Link>
+              <Link to="/about" className="nav-link" onClick={closeMobileMenu}>About Us</Link>
+              <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>Contact</Link>
             </div>
           </nav>
 
@@ -46,6 +47,13 @@ const Header = () => {
               </svg>
               <input type="text" placeholder="Search rare books..." />
             </div>
+
+            <button className="user-button" onClick={() => navigate('/login')}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </button>
 
             <button className="cart-button" onClick={() => navigate('/cart')}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -109,6 +117,8 @@ const Header = () => {
         <div className="mobile-dropdown-content">
           <Link to="/" className="nav-link" onClick={closeMobileMenu}>Home</Link>
           <Link to="/shop" className="nav-link" onClick={closeMobileMenu}>Shop</Link>
+          <Link to="/about" className="nav-link" onClick={closeMobileMenu}>About Us</Link>
+          <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>Contact</Link>
           <Link to="/login" className="nav-link" onClick={closeMobileMenu}>Login</Link>
         </div>
       </div>

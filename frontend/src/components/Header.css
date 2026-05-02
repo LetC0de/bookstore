@@ -133,6 +133,35 @@
   color: var(--color-text-light);
 }
 
+.user-button {
+  position: relative;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.user-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.user-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
 .cart-button {
   position: relative;
   padding: 0.7rem;
