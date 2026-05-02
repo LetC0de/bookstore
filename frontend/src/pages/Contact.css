@@ -4,7 +4,7 @@
 
 .contact-hero {
   padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -84,7 +84,7 @@
 }
 
 .contact-content {
-  background: var(--color-bg);
+  background: transparent;
 }
 
 .contact-grid {

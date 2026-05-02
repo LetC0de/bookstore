@@ -30,12 +30,12 @@
 
 /* Section Spacing */
 .section {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
   }
 
   .container {
@@ -45,7 +45,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) 0;
   }
 
   .container {

@@ -5,6 +5,7 @@ import BookGrid from '../components/BookGrid';
 import DealsSection from '../components/DealsSection';
 import BlogSection from '../components/BlogSection';
 import AboutSection from '../components/AboutSection';
+import SectionDivider from '../components/SectionDivider';
 import { books } from '../data/books';
 
 const Home = () => {
@@ -17,12 +18,19 @@ const Home = () => {
   return (
     <div>
       <Hero />
+      <SectionDivider variant="default" />
       <Categories />
+      <SectionDivider variant="cool" />
       <BookGrid books={trendingBooks} title="Trending Now" subtitle="Most popular books this week" />
+      <SectionDivider variant="pink" />
       <BookGrid books={fictionBooks} title="Fiction Favorites" subtitle="Dive into captivating stories" />
+      <SectionDivider variant="default" />
       <BookGrid books={nonFictionBooks} title="Non-Fiction Essentials" subtitle="Learn, grow, and discover" />
+      <SectionDivider variant="warm" />
       <DealsSection books={dealsBooks} />
+      <SectionDivider variant="cool" />
       <BlogSection />
+      <SectionDivider variant="default" />
       <AboutSection />
     </div>
   );
