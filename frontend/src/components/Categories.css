@@ -1,5 +1,6 @@
-.categories {
+.categories.section {
   background: transparent;
+  padding-top: 0;
 }
 
 .section-header {
