@@ -2,9 +2,9 @@ import React from 'react';
 import BookCard from './BookCard';
 import './BookGrid.css';
 
-const BookGrid = ({ books, title, subtitle }) => {
+const BookGrid = ({ books, title, subtitle, variant }) => {
   return (
-    <section className="book-grid-section section">
+    <section className={`book-grid-section section ${variant === 'trending' ? 'trending' : ''}`}>
       <div className="container">
         {title && (
           <div className="section-header">

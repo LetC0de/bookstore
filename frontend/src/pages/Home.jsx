@@ -21,7 +21,7 @@ const Home = () => {
       <SectionDivider variant="default" />
       <Categories />
       <SectionDivider variant="cool" />
-      <BookGrid books={trendingBooks} title="Trending Now" subtitle="Most popular books this week" />
+      <BookGrid books={trendingBooks} title="Trending Now" subtitle="Most popular books this week" variant="trending" />
       <SectionDivider variant="pink" />
       <BookGrid books={fictionBooks} title="Fiction Favorites" subtitle="Dive into captivating stories" />
       <SectionDivider variant="default" />
