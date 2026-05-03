@@ -3,11 +3,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding: 3rem 1.5rem;
 }
 
 /* Trending Now section with coral/orange background */
 .book-grid-section.trending {
   background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 165, 0, 0.08) 100%);
+  padding: 5rem 3rem;
 }
 
 .book-grid-section.trending::before {
@@ -119,15 +121,17 @@
 .book-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 2.5rem;
   width: 100%;
   max-width: 100%;
+  padding: 1.5rem;
 }
 
 @media (max-width: 1024px) {
   .book-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 2rem;
+    padding: 1.25rem;
   }
 }
 
