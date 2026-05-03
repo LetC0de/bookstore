@@ -10,6 +10,8 @@
 .book-grid-section.trending {
   background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 165, 0, 0.08) 100%);
   padding: 5rem 3rem;
+  border-radius: 24px;
+  margin: 2rem 0;
 }
 
 .book-grid-section.trending::before {
@@ -133,6 +135,10 @@
     gap: 2rem;
     padding: 1.25rem;
   }
+
+  .book-grid-section.trending {
+    padding: 4rem 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -140,9 +146,28 @@
     font-size: 1.5rem;
   }
 
+  .trending .section-title {
+    font-size: 1.75rem;
+  }
+
+  .trending .section-subtitle {
+    font-size: 1rem;
+  }
+
   .book-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .book-grid-section.trending {
+    padding: 3rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .trending-footer {
+    margin-top: 2.5rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -151,12 +176,38 @@
     font-size: 1.25rem;
   }
 
+  .trending .section-title {
+    font-size: 1.5rem;
+  }
+
+  .trending .section-subtitle {
+    font-size: 0.9rem;
+  }
+
   .section-subtitle {
     font-size: 0.875rem;
+    padding: 0 0.5rem;
   }
 
   .book-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .book-grid-section.trending {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    border-radius: 16px;
+  }
+
+  .trending-footer {
+    margin-top: 2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .view-all-btn-lg {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }
