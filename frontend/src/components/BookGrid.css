@@ -1,12 +1,13 @@
 .book-grid-section {
   background: transparent;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Trending Now section with coral/orange background */
 .book-grid-section.trending {
   background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 165, 0, 0.08) 100%);
-  overflow: hidden;
 }
 
 .book-grid-section.trending::before {
@@ -18,7 +19,6 @@
   height: 500px;
   background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
   border-radius: 50%;
-  animation: float 15s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -38,59 +38,58 @@
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
-  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
+  padding: 0 1rem;
 }
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .book-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .book-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .section-subtitle {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .book-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
-    gap: var(--spacing-sm);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 }

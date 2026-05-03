@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { categories } from '../data/books';
 import './Categories.css';
 
 const Categories = () => {
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+      setTimeout(checkScroll, 300);
+    }
+  };
+
   return (
     <section className="categories section">
       <div className="container">
@@ -12,8 +35,25 @@ const Categories = () => {
             Explore our carefully curated collections across diverse literary landscapes
           </p>
         </div>
+      </div>
 
-        <div className="categories-grid">
+      <div className="categories-carousel-wrapper">
+        <button
+          className="carousel-btn carousel-btn-left"
+          onClick={() => scroll('left')}
+          style={{ opacity: canScrollLeft ? 1 : 0.3, pointerEvents: canScrollLeft ? 'auto' : 'none' }}
+          aria-label="Scroll left"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <div
+          className="categories-carousel"
+          ref={scrollRef}
+          onScroll={checkScroll}
+        >
           {categories.map((category, index) => (
             <div
               key={category.name}
@@ -35,6 +75,17 @@ const Categories = () => {
             </div>
           ))}
         </div>
+
+        <button
+          className="carousel-btn carousel-btn-right"
+          onClick={() => scroll('right')}
+          style={{ opacity: canScrollRight ? 1 : 0.3, pointerEvents: canScrollRight ? 'auto' : 'none' }}
+          aria-label="Scroll right"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
       </div>
     </section>
   );

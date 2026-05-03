@@ -15,7 +15,7 @@
   margin-bottom: var(--spacing-sm);
   background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
@@ -26,45 +26,53 @@
   margin: 0 auto;
 }
 
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  gap: clamp(1rem, 3vw, 2rem);
+/* Carousel Container - Wide & Professional */
+.categories-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1600px;
+  margin: 2rem auto 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  padding: 2rem 4rem;
+  box-shadow:
+    0 4px 30px rgba(99, 102, 241, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.categories-carousel {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem;
+  flex: 1;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .category-card {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  flex: 0 0 auto;
+  width: 260px;
+  background: white;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
   text-align: center;
-  transition: all var(--transition-smooth);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  opacity: 0;
-  box-shadow: var(--shadow-md);
-}
-
-.category-card:nth-child(1) { animation-delay: 0.1s; }
-.category-card:nth-child(2) { animation-delay: 0.2s; }
-.category-card:nth-child(3) { animation-delay: 0.3s; }
-.category-card:nth-child(4) { animation-delay: 0.4s; }
-.category-card:nth-child(5) { animation-delay: 0.5s; }
-.category-card:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  scroll-snap-align: center;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.08);
 }
 
 .category-card::before {
@@ -73,11 +81,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: var(--gradient-primary);
+  height: 3px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category-card:hover::before {
@@ -85,146 +93,191 @@
 }
 
 .category-card:hover {
-  transform: translateY(-12px);
-  box-shadow: var(--shadow-xl);
-  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .category-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto var(--spacing-sm);
+  width: 85px;
+  height: 85px;
+  margin: 0 auto var(--spacing-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 22px;
   color: white;
-  transition: all var(--transition-smooth);
-  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
 }
 
 .category-card:hover .category-icon {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
 .category-name {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .category-count {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-sm);
   font-weight: 500;
 }
 
 .category-btn {
-  padding: 0.7rem 1.5rem;
-  background: var(--gradient-primary);
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
   border: none;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all var(--transition-smooth);
-  box-shadow: var(--shadow-sm);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
 .category-card:hover .category-btn {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
 }
 
-.category-btn:active {
-  transform: translateY(0);
+/* Carousel Buttons - Professional Style */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+  color: #6366f1;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-md);
-  }
-
-  .category-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  .category-name {
-    font-size: 1.4rem;
-  }
+.carousel-btn:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+  transform: translateY(-50%) scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
+.carousel-btn-left {
+  left: 1rem;
+}
 
-  .section-subtitle {
-    font-size: 1rem;
-  }
+.carousel-btn-right {
+  right: 1rem;
+}
 
-  .categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-    gap: var(--spacing-md);
+@media (max-width: 1024px) {
+  .categories-carousel-wrapper {
+    max-width: 95%;
+    padding: 1.5rem 3rem;
   }
 
   .category-card {
-    width: 100%;
+    width: 180px;
   }
 
   .category-icon {
     width: 60px;
     height: 60px;
   }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .categories-carousel-wrapper {
+    max-width: 100%;
+    margin: 1.5rem 0 0;
+    padding: 1rem 2.5rem;
+    border-radius: 16px;
+  }
+
+  .category-card {
+    width: 150px;
+    padding: 1rem;
+  }
+
+  .category-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .category-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 
   .category-name {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
+  }
+
+  .category-count {
+    font-size: 0.75rem;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-btn-left {
+    left: 0.25rem;
+  }
+
+  .carousel-btn-right {
+    right: 0.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+  .categories-carousel-wrapper {
+    padding: 0.75rem 2rem;
   }
 
   .category-card {
-    padding: var(--spacing-md);
+    width: 130px;
+    padding: 0.75rem;
   }
 
   .category-icon {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 
   .category-name {
-    font-size: 1.2rem;
-  }
-
-  .category-count {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .category-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-/* Touch feedback */
-@media (hover: none) {
-  .category-card:active {
-    transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.95);
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
   }
 }
