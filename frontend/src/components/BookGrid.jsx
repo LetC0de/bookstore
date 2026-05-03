@@ -19,6 +19,13 @@ const BookGrid = ({ books, title, subtitle, variant }) => {
             </div>
           ))}
         </div>
+        {variant === 'trending' && (
+          <div className="trending-footer">
+            <a href="/trending" className="view-all-btn-lg">
+              View All Books
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
