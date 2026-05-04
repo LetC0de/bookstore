@@ -1,0 +1,185 @@
+.scrollable-book-grid-section {
+  background: transparent;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 3rem 1.5rem;
+}
+
+.scrollable-book-grid-section .section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.scrollable-book-grid-section .section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.03em;
+}
+
+.scrollable-book-grid-section .section-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+.book-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.book-scroll-container {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+  padding: var(--spacing-sm);
+  touch-action: pan-x;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.book-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.book-scroll-container.dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+
+.book-scroll-container:active {
+  cursor: grabbing;
+}
+
+.book-scroll-item {
+  flex: 0 0 auto;
+  width: clamp(240px, 30vw, 320px);
+  scroll-snap-align: center;
+  -webkit-scroll-snap-align: center;
+}
+
+.book-scroll-item .book-card {
+  height: 100%;
+}
+
+/* Scroll Buttons */
+.book-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-smooth);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.book-scroll-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.book-scroll-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.book-scroll-left {
+  left: 10px;
+}
+
+.book-scroll-right {
+  right: 10px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .book-scroll-item {
+    width: clamp(220px, 40vw, 300px);
+  }
+
+  .book-scroll-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollable-book-grid-section {
+    padding: 2rem 1rem;
+  }
+
+  .scrollable-book-grid-section .section-title {
+    font-size: 1.5rem;
+  }
+
+  .scrollable-book-grid-section .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .book-scroll-item {
+    width: clamp(240px, 75vw, 320px);
+  }
+
+  .book-scroll-btn {
+    display: none;
+  }
+
+  .book-scroll-container {
+    padding: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollable-book-grid-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .scrollable-book-grid-section .section-title {
+    font-size: 1.25rem;
+  }
+
+  .scrollable-book-grid-section .section-subtitle {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+
+  .book-scroll-item {
+    width: clamp(220px, 85vw, 280px);
+  }
+
+  .book-scroll-container {
+    gap: var(--spacing-md);
+  }
+}

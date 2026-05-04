@@ -62,6 +62,78 @@ export const books = [
     rating: 4.5,
     image: "https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg"
   },
+  {
+    id: 16,
+    title: "The Song of Achilles",
+    author: "Madeline Miller",
+    price: 26.99,
+    genre: "Fiction",
+    rating: 4.7,
+    image: "https://covers.openlibrary.org/b/isbn/9780062060624-L.jpg"
+  },
+  {
+    id: 17,
+    title: "Normal People",
+    author: "Sally Rooney",
+    price: 24.99,
+    genre: "Fiction",
+    rating: 4.4,
+    image: "https://covers.openlibrary.org/b/isbn/9781984822178-L.jpg"
+  },
+  {
+    id: 18,
+    title: "Anxious People",
+    author: "Fredrik Backman",
+    price: 26.50,
+    genre: "Fiction",
+    rating: 4.6,
+    image: "https://covers.openlibrary.org/b/isbn/9781501160837-L.jpg"
+  },
+  {
+    id: 19,
+    title: "The Invisible Life of Addie LaRue",
+    author: "V.E. Schwab",
+    price: 27.99,
+    genre: "Fiction",
+    rating: 4.5,
+    image: "https://covers.openlibrary.org/b/isbn/9780765387561-L.jpg"
+  },
+  {
+    id: 20,
+    title: "Daisy Jones & The Six",
+    author: "Taylor Jenkins Reid",
+    price: 25.99,
+    genre: "Fiction",
+    rating: 4.6,
+    image: "https://covers.openlibrary.org/b/isbn/9781524798628-L.jpg"
+  },
+  {
+    id: 21,
+    title: "The Nightingale",
+    author: "Kristin Hannah",
+    price: 27.50,
+    genre: "Fiction",
+    rating: 4.8,
+    image: "https://covers.openlibrary.org/b/isbn/9780312577223-L.jpg"
+  },
+  {
+    id: 22,
+    title: "Eleanor Oliphant Is Completely Fine",
+    author: "Gail Honeyman",
+    price: 25.50,
+    genre: "Fiction",
+    rating: 4.5,
+    image: "https://covers.openlibrary.org/b/isbn/9780735220683-L.jpg"
+  },
+  {
+    id: 23,
+    title: "The Book Thief",
+    author: "Markus Zusak",
+    price: 26.99,
+    genre: "Fiction",
+    rating: 4.7,
+    image: "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg"
+  },
 
   // Mystery & Thriller
   {
@@ -152,7 +224,7 @@ export const books = [
 ];
 
 export const categories = [
-  { name: "Fiction", count: 6, color: "#2C3E50" },
+  { name: "Fiction", count: 14, color: "#2C3E50" },
   { name: "Mystery", count: 3, color: "#34495E" },
   { name: "Science Fiction", count: 3, color: "#3498DB" },
   { name: "Fantasy", count: 1, color: "#922B21" },
