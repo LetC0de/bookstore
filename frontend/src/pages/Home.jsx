@@ -12,7 +12,7 @@ const Home = () => {
   const featuredBooks = books.filter(book => book.featured);
   const trendingBooks = books.filter(book => book.rating >= 4.6).slice(0, 8);
   const fictionBooks = books.filter(book => book.genre === 'Fiction').slice(0, 12);
-  const nonFictionBooks = books.filter(book => book.genre === 'Non-Fiction').slice(0, 6);
+  const nonFictionBooks = books.filter(book => book.genre === 'Non-Fiction').slice(0, 12);
   const dealsBooks = books.slice(0, 10);
 
   return (
@@ -20,8 +20,8 @@ const Home = () => {
       <Hero />
       <Categories />
       <BookGrid books={trendingBooks} title="Trending Now" subtitle="Most popular books this week" variant="trending" />
-      <ScrollableBookGrid books={fictionBooks} title="Fiction Favorites" subtitle="Dive into captivating stories" />
-      <BookGrid books={nonFictionBooks} title="Non-Fiction Essentials" subtitle="Learn, grow, and discover" />
+      <ScrollableBookGrid books={fictionBooks} title="Fiction Favorites" subtitle="Dive into captivating stories" showViewAll={true} />
+      <ScrollableBookGrid books={nonFictionBooks} title="Non-Fiction Essentials" subtitle="Learn, grow, and discover" showViewAll={true} />
       <DealsSection books={dealsBooks} />
       <BlogSection />
       <AboutSection />

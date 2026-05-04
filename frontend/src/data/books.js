@@ -220,6 +220,78 @@ export const books = [
     genre: "Non-Fiction",
     rating: 4.5,
     image: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg"
+  },
+  {
+    id: 24,
+    title: "Becoming",
+    author: "Michelle Obama",
+    price: 32.50,
+    genre: "Non-Fiction",
+    rating: 4.8,
+    image: "https://covers.openlibrary.org/b/isbn/9781524763138-L.jpg"
+  },
+  {
+    id: 25,
+    title: "The Immortal Life of Henrietta Lacks",
+    author: "Rebecca Skloot",
+    price: 29.99,
+    genre: "Non-Fiction",
+    rating: 4.6,
+    image: "https://covers.openlibrary.org/b/isbn/9781400052189-L.jpg"
+  },
+  {
+    id: 26,
+    title: "Born a Crime",
+    author: "Trevor Noah",
+    price: 28.50,
+    genre: "Non-Fiction",
+    rating: 4.7,
+    image: "https://covers.openlibrary.org/b/isbn/9780399588174-L.jpg"
+  },
+  {
+    id: 27,
+    title: "The Power of Habit",
+    author: "Charles Duhigg",
+    price: 27.99,
+    genre: "Non-Fiction",
+    rating: 4.5,
+    image: "https://covers.openlibrary.org/b/isbn/9780812981605-L.jpg"
+  },
+  {
+    id: 28,
+    title: "Quiet: The Power of Introverts",
+    author: "Susan Cain",
+    price: 29.50,
+    genre: "Non-Fiction",
+    rating: 4.6,
+    image: "https://covers.openlibrary.org/b/isbn/9780307352156-L.jpg"
+  },
+  {
+    id: 29,
+    title: "The Body Keeps the Score",
+    author: "Bessel van der Kolk",
+    price: 31.99,
+    genre: "Non-Fiction",
+    rating: 4.7,
+    image: "https://covers.openlibrary.org/b/isbn/9780143127741-L.jpg"
+  },
+  {
+    id: 30,
+    title: "Bad Blood",
+    author: "John Carreyrou",
+    price: 28.99,
+    genre: "Non-Fiction",
+    rating: 4.5,
+    image: "https://covers.openlibrary.org/b/isbn/9781524731656-L.jpg"
+  },
+  {
+    id: 31,
+    title: "When Breath Becomes Air",
+    author: "Paul Kalanithi",
+    price: 26.99,
+    genre: "Non-Fiction",
+    rating: 4.8,
+    image: "https://covers.openlibrary.org/b/isbn/9780812988406-L.jpg"
   }
 ];
 
@@ -228,6 +300,6 @@ export const categories = [
   { name: "Mystery", count: 3, color: "#34495E" },
   { name: "Science Fiction", count: 3, color: "#3498DB" },
   { name: "Fantasy", count: 1, color: "#922B21" },
-  { name: "Non-Fiction", count: 3, color: "#117A65" },
+  { name: "Non-Fiction", count: 11, color: "#117A65" },
   { name: "Self-Help", count: 1, color: "#E74C3C" }
 ];

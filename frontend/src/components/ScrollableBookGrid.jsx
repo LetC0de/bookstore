@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import BookCard from './BookCard';
 import './ScrollableBookGrid.css';
 
-const ScrollableBookGrid = ({ books, title, subtitle }) => {
+const ScrollableBookGrid = ({ books, title, subtitle, showViewAll = false }) => {
   const scrollRef = useRef(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -141,6 +141,12 @@ const ScrollableBookGrid = ({ books, title, subtitle }) => {
             →
           </button>
         </div>
+
+        {showViewAll && (
+          <div className="book-scroll-footer">
+            <button className="btn-view-all">View All Books</button>
+          </div>
+        )}
       </div>
     </section>
   );
