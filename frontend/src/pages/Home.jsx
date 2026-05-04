@@ -12,7 +12,7 @@ const Home = () => {
   const trendingBooks = books.filter(book => book.rating >= 4.6).slice(0, 8);
   const fictionBooks = books.filter(book => book.genre === 'Fiction').slice(0, 6);
   const nonFictionBooks = books.filter(book => book.genre === 'Non-Fiction').slice(0, 6);
-  const dealsBooks = books.slice(0, 6);
+  const dealsBooks = books.slice(0, 10);
 
   return (
     <div>
